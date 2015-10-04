@@ -26,14 +26,16 @@ public class TankTeleopTest extends OpMode
         gamepad2.setJoystickDeadzone(DEADZONE);
         rightBottomMotor = hardwareMap.dcMotor.get("rightBottom");
         leftBottomMotor = hardwareMap.dcMotor.get("leftBottom");
-        leftBottomMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftBottomMotor.setDirection(DcMotor.Direction.FORWARD);
+        rightBottomMotor.setDirection(DcMotor.Direction.REVERSE);
+
     }
 
     @Override
     public void loop()
     {
-        leftBottomMotor.setPower(gamepad1.left_stick_y);
-        rightBottomMotor.setPower(gamepad1.right_stick_y);
+        leftBottomMotor.setPower(gamepad1.right_stick_y);
+        rightBottomMotor.setPower(gamepad1.left_stick_y);
         telemetry.addData("leftBottomMotor", leftBottomMotor.getPower());
         telemetry.addData("rightBottomMotor", rightBottomMotor.getPower());
     }

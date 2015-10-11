@@ -9,29 +9,23 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 {
     public void runOpMode()
     {
-        moveStraightLineDist(48.0f, .75f, isForward = true)
-        spinOnCenter(90.0f, .5f, isLeft = true)
-        moveStraightLineDist(48.0f, .75f, isForward = true)
-        spinOnCenter(90f, .5f, isRight = false)
-        moveStraightLineDist(24.0f, .75f, isForward = true)
-        spinOnCenter(90.0f, .5f, isLeft = true)
-        moveStraightLineDist(24.0f, .75f, isForward = true)
+        moveStraightLineDist(48.0f, .75f,  true)
+        spinOnCenter(90.0f, .5f,  true)
+        moveStraightLineDist(48.0f, .75f,   true)
+        spinOnCenter(90f, .5f,  false)
+        moveStraightLineDist(24.0f, .75f,true)
+        spinOnCenter(90.0f, .5f,  true)
+        moveStraightLineDist(24.0f, .75f, true)
         senseColor()
-        if (//parameter for red and team color is red)
+        if (//parameter for red)
             {
-                    //poke button
+                   solenoidLeft()
             }
-        if (//parameter for blue team color is red)
+        if (//parameter for blue)
                 {
-                        //poke other button
+                  solenoidRight()
                 }
-        if (//parameter for blue and team color is blue)
-                {
-                        //poke button
-                }
-        if (//parameter for red team color is blue)
-                {
-                        //poke other button
-                }
+        spinOnCenter(48.0f, .75f, true)
+        moveStraightLineDist(24.0f, .75f, true)
     }
 }

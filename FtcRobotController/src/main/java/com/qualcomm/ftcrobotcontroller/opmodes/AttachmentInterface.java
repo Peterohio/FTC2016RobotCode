@@ -13,4 +13,6 @@ public interface AttachmentInterface
     void primeObjectsInRobot();
     void loadGrabber();
     void collectObjects();
+    void leftSolenoid();
+    void rightSolenoid();
 }
